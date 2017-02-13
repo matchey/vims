@@ -1,0 +1,90 @@
+
+"{{{ set
+" set showmatch "括弧入力時の対応する括弧を表示(一瞬カーソル移動)
+" autocmd ColorScheme * highlight MatchParen gui=bold,underline guibg=NONE guifg=blue
+ "#####検索設定#####
+"set nocompatible 
+"}}}
+
+ "}}}
+"let loaded_matchparen = 1 "括弧のハイライトを表示しない
+"autocmd ColorScheme * highlight MatchParen gui=bold,underline guibg=NONE guifg=orenge
+ "nerdcommenter用 cc でコメントor コメントアウト
+ let NERDSpaceDelims = 1
+ nmap cc <Plug>NERDCommenterToggle
+ vmap cc <Plug>NERDCommenterToggle
+ "mru用 スペース2回押しでプラグイン起動
+"nnoremap <space><space> :<c-u>MRU<CR>
+ 
+ "自動整形プラグイン用 整形したい部分をvisual modeで選択してenter.
+ " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+ vmap <Enter> <Plug>(EasyAlign)
+ " Start interactive EasyAlign for a motion/text object (e.g.<Leader>    aip)
+ nmap <Leader>a <Plug>(EasyAlign)
+
+ "DoxygenToolkitは C/C++ の関数の先頭で :Dox とうつと，自動的に
+ "Doxygenスタイルのコメントを挿入してくれる．
+ "
+ "vim-autoclose はカッコのケツを自動挿入してくれる．
+ "
+ "nerdtree は :NERDTree でディレクトリツリーの表示．
+ 
+ "original"
+ " set cursorline
+ " highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=black
+ "change line
+ 
+"{{{
+"}}}
+
+
+
+
+"{{{ map
+ nmap <CR> i<CR><ESC>
+ nmap <BS> i<BS><ESC><Right>
+
+
+
+ nnoremap <silent><Space><S-q> gg"qyG'':q!<Enter>
+"nnoremap <silent>q<Up> <C-w><Up>:hide<Enter>
+"nnoremap <silent>q<Down> <C-w><Down>:hide<Enter>
+"nnoremap <silent><Space>q :bl<CR>:q<CR>:bf<CR>
+"nnoremap <silent><Space><S-q> :bl<CR>:q!<CR>:bf<CR>
+"nnoremap <Space>c :RosCatkinMake<Enter>
+"nnoremap <Space>b :RosBuild<Enter>
+"nnoremap <Space>b :cd %:p:h:h<CR>:make<Enter>
+ nnoremap <Space>t :tabnew
+"nnoremap <Space>r o<C-r>%<ESC>6bDbdB"pyiwu:!rosrun<Space><C-r>p<Space>%:t:r<CR>
+
+ nnoremap <Space>g "gyiw:vimgrep <C-r>g %<CR>:cw<CR>
+ nnoremap <C-n> :cnext<CR>
+ nnoremap <C-p> :cprevious<CR>
+"nnoremap <C-k> :crewind<CR>
+"nnoremap <C-j> :clast<CR>
+"nnoremap <Space>d <C-w><Down>:q<CR>
+ nnoremap <Space>f :cw<CR>
+"  nnoremap * *N
+"nnoremap * *''
+ "ファイル全体
+"  nnoremap <Space>s "syiw:%s/<C-r>s//gc<Left><Left><Left>
+
+ nnoremap <C-Up> <C-w>+
+ nnoremap <C-Down> <C-w>-
+
+
+"nnoremap == gg=G''zz
+
+
+"nnoremap ;; u.
+"inoremap <kPageDown> <ESC>
+ nnoremap <C-e> <C-l> "再描画
+
+ "次の折りたたみへ移動
+ nnoremap <C-j> zj
+ nnoremap <C-k> zk 
+ "折りたたみの最後へ移動
+ nnoremap <Space>l ]z
+ nnoremap <Space>h [z 
+ "}}}
+ 
